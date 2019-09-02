@@ -265,7 +265,7 @@ namespace Railgun.Utilities
                     Header = ProcessKeyValue(pair.Key)
                 };
 
-                if(map.ValueType != BINValueType.Structure)
+                if(map.ValueType != BINValueType.Structure && map.ValueType != BINValueType.Embedded)
                 {
                     node.Header += " => " + (ProcessPrimitiveValue(pair.Value, false).Children[0] as TextBlock).Text;
                 }
